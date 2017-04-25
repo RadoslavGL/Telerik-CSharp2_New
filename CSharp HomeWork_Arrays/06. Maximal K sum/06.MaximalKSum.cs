@@ -21,25 +21,29 @@ namespace _06.Maximal_K_sum
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[0] = int.Parse(Console.ReadLine());
+                numbers[i] = int.Parse(Console.ReadLine());
             }
 
+            //Console.WriteLine(string.Join(", ", numbers));
+            
             //Selection Sort
             for (int i = 0; i < numbers.Length - 1; i++)
             {
-                for (int k = i + 1; k < numbers.Length; k++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if (numbers[i] > numbers[k])
+                    if (numbers[i] > numbers[j])
                     {
                         int swap = numbers[i];
-                        numbers[i] = numbers[k];
-                        numbers[k] = swap;
+                        numbers[i] = numbers[j];
+                        numbers[j] = swap;
                     }
                 }
             }
 
+            //Console.WriteLine(string.Join(", ", numbers));
+
             int sum = 0;
-            for (int i = numbers.Length - 1; i > numbers.Length - K - 1; i--)
+            for (int i = N - 1; i > N - 1 - K; i--)
             {
                 sum += numbers[i];
             }
