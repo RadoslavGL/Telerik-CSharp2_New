@@ -14,7 +14,30 @@ namespace _15.Prime_numbers
     {
         static void Main(string[] args)
         {
+            int N = int.Parse(Console.ReadLine());
+            bool[] arrPrime = new bool[N + 1];
+            arrPrime = Enumerable.Repeat(true, N + 2).ToArray();
 
+            //Console.WriteLine(string.Join("\n", arrPrime));
+
+            for (int i = 2; i < Math.Sqrt(N); i++)
+            {
+                for (int j = i * i; j <= N; j += i)
+                {
+                    arrPrime[j] = false;
+                }
+            }
+
+            //Console.WriteLine(string.Join("\n", arrPrime));
+
+            for (int i = N; i >= 2 ; i--)
+            {
+                if (arrPrime[i] == true)
+                {
+                    Console.WriteLine(i);
+                    break;
+                }
+            }
         }
     }
 }
