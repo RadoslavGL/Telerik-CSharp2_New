@@ -8,33 +8,37 @@
 namespace _15.Prime_numbers
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
+
     class Program
     {
         static void Main(string[] args)
         {
             int N = int.Parse(Console.ReadLine());
-            bool[] arrPrime = new bool[N + 1];
-            arrPrime = Enumerable.Repeat(true, N + 2).ToArray();
+            bool[] isPrime = new bool[N];
+            isPrime = Enumerable.Repeat(true, N + 1).ToArray();
 
             //Console.WriteLine(string.Join("\n", arrPrime));
 
-            for (int i = 2; i < Math.Sqrt(N); i++)
+            for (int i = 2; i <= Math.Sqrt(N); i++)
             {
-                for (int j = i * i; j <= N; j += i)
+                if (isPrime[i] == true)
                 {
-                    arrPrime[j] = false;
+                    for (int j = i * i; j <= N; j += i)
+                    {
+                        isPrime[j] = false;
+                    }
                 }
+
             }
 
             //Console.WriteLine(string.Join("\n", arrPrime));
 
-            for (int i = N; i >= 2 ; i--)
+            for (int k = N; k >= 2 ; k--)
             {
-                if (arrPrime[i] == true)
+                if (isPrime[k] == true)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine(k);
                     break;
                 }
             }
