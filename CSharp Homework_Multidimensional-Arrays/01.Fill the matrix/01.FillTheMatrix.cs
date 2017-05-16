@@ -17,14 +17,18 @@ namespace _01.Fill_the_matrix
     {
         static void Main(string[] args)
         {
-            //int N = int.Parse(Console.ReadLine());
-            //char letter = char.Parse(Console.ReadLine().ToLower());
-            int N = 4;
-            char letter = 'c';
+            int N = int.Parse(Console.ReadLine());
+            char letter = char.Parse(Console.ReadLine().ToLower());
+            //int N = 4;
+            //char letter = 'd';
 
             int[,] matrix = new int[N, N];
 
-            //first case - increasing towards the bottom on each column
+            //1   5   9   13
+            //2   6   10  14
+            //3   7   11  15
+            //4   8   12  16
+
             if (letter == 'a')
             {
 
@@ -39,11 +43,19 @@ namespace _01.Fill_the_matrix
                         count += N;
                     }
                     count -= N * N;
+
                 }
 
+                //print
+                PrintMatrix(matrix);
 
             }
-            //second case - like a caterpillar
+
+            //1   8   9   16
+            //2   7   10  15
+            //3   6   11  14
+            //4   5   12  13
+
             else if (letter == 'b')
             {
 
@@ -65,7 +77,7 @@ namespace _01.Fill_the_matrix
                         {
                             count--;
                             matrix[row, col] = count;
-                            
+
                         }
 
                     }
@@ -84,6 +96,9 @@ namespace _01.Fill_the_matrix
 
                     }
                 }
+
+                //print
+                PrintMatrix(matrix);
             }
 
             //7   11  14  16
@@ -127,14 +142,61 @@ namespace _01.Fill_the_matrix
                     }
                 }
 
+                //print
+                PrintMatrix(matrix);
+            }
 
+            //1   12  11  10
+            //2   13  16  9
+            //3   14  15  8
+            //4   5   6   7
+
+
+
+            else if (letter == 'd')
+            {
+                int count = 1;
+
+                for (int i = 0; i < N; i++) // top rows and columns
+                {
+
+                    //top rows and cols
+                    for (int j = i; j < N - i; j++)
+                    {
+                        matrix[i, j] = count;
+                        count++;
+                    }
+
+                    //right cols
+                    for (int j = 0; j < N - 1 - i * 2; j++)
+                    {
+                        matrix[j + 1 + i, N - i - 1] = count;
+                        count++;
+                    }
+
+                    //bottom rows and cols;
+                    for (int j = 0; j < N - 1 - i * 2; j++)
+                    {
+                        matrix[N - 1 - i, N - j - 2 - i] = count;
+                        count++;
+                    }
+
+                    //left cols
+                    for (int j = 0; j < N - 2 - i*2; j++)
+                    {
+                        matrix[N - j - 2 - i, i] = count;
+                        count++;
+                    }
+
+                }
+
+                //print
+                PrintMatrix(matrix);
 
             }
-           
 
 
-            //print
-            PrintMatrix(matrix);
+            
         }
 
         private static void PrintMatrix(int[,] matrix)
