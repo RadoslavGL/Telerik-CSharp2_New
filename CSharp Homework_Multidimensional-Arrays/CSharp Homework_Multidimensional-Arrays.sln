@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.DemoSorting", "00.DemoSo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Fill the matrix", "01.Fill the matrix\01.Fill the matrix.csproj", "{482CE654-0F0B-4581-AC13-B32BE851F9F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Maximal sum", "02.Maximal sum\02.Maximal sum.csproj", "{690CC741-1BA1-4FB2-81AF-814877A33BBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Sequence in matrix", "03. Sequence in matrix\03. Sequence in matrix.csproj", "{432A3656-7D2B-44FD-8F17-BF94DDAE9B8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{482CE654-0F0B-4581-AC13-B32BE851F9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{482CE654-0F0B-4581-AC13-B32BE851F9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{482CE654-0F0B-4581-AC13-B32BE851F9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690CC741-1BA1-4FB2-81AF-814877A33BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690CC741-1BA1-4FB2-81AF-814877A33BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690CC741-1BA1-4FB2-81AF-814877A33BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690CC741-1BA1-4FB2-81AF-814877A33BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432A3656-7D2B-44FD-8F17-BF94DDAE9B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432A3656-7D2B-44FD-8F17-BF94DDAE9B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432A3656-7D2B-44FD-8F17-BF94DDAE9B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432A3656-7D2B-44FD-8F17-BF94DDAE9B8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

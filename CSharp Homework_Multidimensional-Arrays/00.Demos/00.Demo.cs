@@ -343,7 +343,135 @@ namespace _00.Demos
             //    Console.WriteLine();
             //}
 
-            
+            ////------- print Matrix
+
+            ////1   5   9   13
+            ////2   6   10  14
+            ////3   7   11  15
+            ////4   8   12  16
+
+            //int N = int.Parse(Console.ReadLine());
+            //int[,] matrix = new int[N, N];
+
+            //int count = 0;
+
+            //for (int row = 0; row < matrix.GetLength(0); row++)
+            //{
+            //    count++;
+            //    for (int col = 0; col < matrix.GetLength(1); col++)
+            //    {
+            //        matrix[row, col] = count;
+            //        count += N;
+            //    }
+            //    count -= N * N;
+            //}
+
+            ////print
+            //for (int row = 0; row < matrix.GetLength(0); row++)
+            //{
+            //    for (int col = 0; col < matrix.GetLength(1); col++)
+            //    {
+            //        Console.Write("{0} ", matrix[row, col]);
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            ////------- print Matrix
+
+            ////1   8   9   16
+            ////2   7   10  15
+            ////3   6   11  14
+            ////4   5   12  13
+
+            //int N = int.Parse(Console.ReadLine());
+            //int[,] matrix = new int[N, N];
+
+            //int count = 1;
+
+            //for (int col = 0; col < matrix.GetLength(1); col++)
+            //{
+            //    for (int row = 0; row < matrix.GetLength(0); row++)
+            //    {
+            //        if (col % 2 == 0)
+            //        {                       
+            //            matrix[row, col] = count;
+            //            count++;
+            //        }
+            //        else
+            //        {
+            //            count--;
+            //            matrix[row, col] = count;
+            //        }
+            //    }
+            //    count += N;
+            //}
+
+            ////print
+            //for (int row = 0; row < matrix.GetLength(0); row++)
+            //{
+            //    for (int col = 0; col < matrix.GetLength(1); col++)
+            //    {
+            //        Console.Write("{0} ", matrix[row, col]);
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //------- print Matrix
+            //7   11  14  16
+            //4   8   12  15
+            //2   5   9   13
+            //1   3   6   10
+
+
+            int N = int.Parse(Console.ReadLine());
+            int[,] matrix = new int[N, N];
+
+            int value = 1;
+            int cols = 0;
+            int rows = 0;
+
+            //below the diagonal and the diagonal
+            for (int i = N - 1; i >= 0; i--)
+            {
+                cols = 0;
+                rows = i;
+
+                while (cols < N && rows < N)
+                {
+                    matrix[rows, cols] = value;
+                    value++;
+                    rows++;
+                    cols++;
+                }
+            }
+
+            //above the diagonal
+            for (int j = 1; j < N; j++)
+            {
+                rows = 0;
+                cols = j;
+
+                while (cols < N && rows < N)
+                {
+                    matrix[rows, cols] = value;
+                    value++;
+                    rows++;
+                    cols++;
+                }
+            }
+
+
+
+
+            //print
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write("{0} ", matrix[row, col]);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
