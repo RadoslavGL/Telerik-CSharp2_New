@@ -22,7 +22,7 @@ namespace _03.Sequence_in_matrix
             int N = int.Parse(matrixDimensions[0]);
             int M = int.Parse(matrixDimensions[1]);
 
-            int[,] matrix = new int[N, M];
+            object[,] matrix = new object[N, M];
 
             //fill in the matrix
             for (int row = 0; row < matrix.GetLength(0); row++)
@@ -30,12 +30,10 @@ namespace _03.Sequence_in_matrix
                 string[] inputLine = Console.ReadLine().Split(' ').ToArray(); 
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
-                    matrix[row, col] = int.Parse(inputLine[col]);
+                    matrix[row, col] = inputLine[col];
                 }
             }
 
-
-            //int count = 1;
             int currentCount = 1;
             int maxCount = 0;
 
@@ -49,15 +47,14 @@ namespace _03.Sequence_in_matrix
                     if (matrix[row, col] == matrix[row - 1, col])
                     {
                         currentCount++;
-                        row++;
                         maxCount = CheckingMax(currentCount, maxCount);
                     }
                     else
                     {
                         maxCount = CheckingMax(currentCount, maxCount);
                         currentCount = 1;
-                        row++;
                     }
+                    row++;
                 }
             }
 
@@ -71,15 +68,14 @@ namespace _03.Sequence_in_matrix
                     if (matrix[row, col] == matrix[row, col - 1])
                     {
                         currentCount++;
-                        col++;
                         maxCount = CheckingMax(currentCount, maxCount);
                     }
                     else
                     {
                         maxCount = CheckingMax(currentCount, maxCount);
                         currentCount = 1;
-                        col++;
                     }
+                    col++;
                 }
             }
 
@@ -94,17 +90,15 @@ namespace _03.Sequence_in_matrix
                     if (matrix[row, col] == matrix[row - 1, col - 1])
                     {
                         currentCount++;
-                        row++;
-                        col++;
                         maxCount = CheckingMax(currentCount, maxCount);
                     }
                     else
                     {
                         maxCount = CheckingMax(currentCount, maxCount);
                         currentCount = 1;
-                        row++;
-                        col++;
                     }
+                    row++;
+                    col++;
                 }
             }
 
@@ -119,17 +113,15 @@ namespace _03.Sequence_in_matrix
                     if (matrix[row, col] == matrix[row - 1, col - 1])
                     {
                         currentCount++;
-                        row++;
-                        col++;
                         maxCount = CheckingMax(currentCount, maxCount);
                     }
                     else
                     {
                         maxCount = CheckingMax(currentCount, maxCount);
                         currentCount = 1;
-                        row++;
-                        col++;
                     }
+                    row++;
+                    col++;
                 }
             }
 
@@ -144,17 +136,15 @@ namespace _03.Sequence_in_matrix
                     if (matrix[row, col] == matrix[row - 1, col + 1])
                     {
                         currentCount++;
-                        row++;
-                        col--;
                         maxCount = CheckingMax(currentCount, maxCount);
                     }
                     else
                     {
                         maxCount = CheckingMax(currentCount, maxCount);
                         currentCount = 1;
-                        row++;
-                        col--;
                     }
+                    row++;
+                    col--;
                 }
             }
 
@@ -169,34 +159,20 @@ namespace _03.Sequence_in_matrix
                     if (matrix[row, col] == matrix[row - 1, col + 1])
                     {
                         currentCount++;
-                        row++;
-                        col--;
                         maxCount = CheckingMax(currentCount, maxCount);
                     }
                     else
                     {
                         maxCount = CheckingMax(currentCount, maxCount);
                         currentCount = 1;
-                        row++;
-                        col--;
                     }
+                    row++;
+                    col--;
                 }
             }
             
-
             Console.WriteLine(maxCount);
 
-            //Console.WriteLine();
-
-            ////print matrix
-            //for (int row = 0; row < matrix.GetLength(0); row++)
-            //{
-            //    for (int col = 0; col < matrix.GetLength(1); col++)
-            //    {
-            //        Console.Write("{0} ", matrix[row, col]);
-            //    }
-            //    Console.WriteLine();
-            //}
         }
 
         private static int CheckingMax(int currentCount, int maxCount)
